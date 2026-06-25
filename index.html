@@ -36,4 +36,364 @@
   #hero .caption { font-size:11px; letter-spacing:0.4em; opacity:0.6; margin-bottom:48px; }
   #hero h1 { font-size:clamp(80px,14vw,220px); margin-bottom:24px; }
   #hero .sub { font-size:18px; opacity:0.7; max-width:600px; margin:0 auto; }
+  #hero .scroll-cue { position:absolute; bottom:48px; left:50%; transform:translateX(-50%); font-size:11px; letter-spacing:0.3em; opacity:0.5; animation:bounce 2s infinite; }
+  @keyframes bounce { 0%,100%{transform:translate(-50%,0);} 50%{transform:translate(-50%,10px);} }
 
+  /* MANIFESTO */
+  #manifesto { display:flex; align-items:center; justify-content:center; background:var(--bg); }
+  #manifesto .lines { max-width:1100px; }
+  #manifesto p { font-size:clamp(36px,5vw,72px); font-weight:300; letter-spacing:-0.02em; line-height:1.2; opacity:0; transform:translateY(40px); transition:all 0.8s ease; }
+  #manifesto p.show { opacity:1; transform:translateY(0); }
+  #manifesto p:not(:last-child) { margin-bottom:24px; }
+  #manifesto p span { color:var(--accent); }
+
+  /* AGENCY */
+  #agency { background:var(--fg); color:var(--bg); }
+  #agency .intro { font-size:12px; letter-spacing:0.3em; opacity:0.5; margin-bottom:24px; }
+  #agency h2 { font-size:clamp(48px,7vw,120px); margin-bottom:80px; max-width:1200px; }
+  #agency .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:48px; padding:64px 0; border-top:1px solid #0A0A0A20; border-bottom:1px solid #0A0A0A20; }
+  #agency .stat .num { font-family:'Anton',sans-serif; font-size:clamp(48px,6vw,90px); line-height:1; margin-bottom:12px; }
+  #agency .stat .label { font-size:12px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.6; }
+  #agency .glocal { margin-top:120px; padding:64px; background:var(--bg); color:var(--fg); }
+  #agency .glocal h3 { font-family:'Anton',sans-serif; font-size:64px; margin-bottom:32px; }
+  #agency .glocal h3 span { color:var(--accent); }
+  #agency .glocal .split { display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:32px; }
+  #agency .glocal .col h4 { font-family:'Anton',sans-serif; font-size:24px; color:var(--accent); margin-bottom:16px; letter-spacing:0.1em; }
+  #agency .glocal .col p { font-size:14px; opacity:0.8; line-height:1.7; }
+  #agency .offices { display:flex; flex-wrap:wrap; gap:24px; margin-top:48px; font-size:11px; letter-spacing:0.3em; text-transform:uppercase; opacity:0.6; }
+
+  /* VALUES */
+  #values { background:var(--bg); }
+  #values .intro { font-size:12px; letter-spacing:0.3em; opacity:0.5; margin-bottom:24px; }
+  #values h2 { font-size:clamp(48px,7vw,110px); margin-bottom:80px; max-width:1100px; }
+  #values .grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:#F5F1EA15; border:1px solid #F5F1EA15; }
+  #values .v { background:var(--bg); padding:48px 24px; min-height:280px; display:flex; flex-direction:column; justify-content:space-between; transition:all 0.4s; }
+  #values .v:hover { background:var(--accent); color:var(--bg); }
+  #values .v .num { font-size:11px; letter-spacing:0.3em; opacity:0.5; }
+  #values .v h3 { font-family:'Anton',sans-serif; font-size:24px; line-height:1; }
+
+  /* CAPABILITIES (one-stop shop) */
+  #capabilities { background:var(--fg); color:var(--bg); }
+  #capabilities .intro { font-size:12px; letter-spacing:0.3em; opacity:0.5; margin-bottom:24px; }
+  #capabilities h2 { font-size:clamp(48px,7vw,110px); margin-bottom:64px; max-width:1100px; }
+  #capabilities .pillars { display:grid; grid-template-columns:repeat(5,1fr); gap:24px; }
+  #capabilities .p { padding:40px 24px; background:var(--bg); color:var(--fg); min-height:380px; display:flex; flex-direction:column; justify-content:space-between; transition:transform 0.4s; }
+  #capabilities .p:hover { transform:translateY(-8px); }
+  #capabilities .p .num { font-size:11px; letter-spacing:0.3em; opacity:0.5; }
+  #capabilities .p h3 { font-family:'Anton',sans-serif; font-size:24px; line-height:1.05; }
+  #capabilities .p ul { list-style:none; font-size:12px; opacity:0.75; }
+  #capabilities .p ul li { padding:6px 0; border-bottom:1px solid #F5F1EA10; }
+  #capabilities .regions { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:120px; }
+  #capabilities .region { padding:48px; background:var(--bg); color:var(--fg); }
+  #capabilities .region h4 { font-family:'Anton',sans-serif; font-size:80px; color:var(--accent); margin-bottom:16px; }
+  #capabilities .region .tag { font-size:11px; letter-spacing:0.3em; opacity:0.5; margin-bottom:24px; }
+  #capabilities .region ul { list-style:none; }
+  #capabilities .region li { padding:12px 0; border-bottom:1px solid #F5F1EA10; font-size:14px; opacity:0.8; }
+
+  /* CASES */
+  #cases { background:var(--bg); padding:0; }
+  #cases .head { padding:120px 48px 80px; }
+  #cases .head .label { font-size:12px; letter-spacing:0.3em; opacity:0.5; margin-bottom:24px; }
+  #cases .head h2 { font-size:clamp(56px,8vw,140px); }
+  .case { min-height:100vh; padding:80px 48px; border-top:1px solid #F5F1EA15; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  .case:nth-child(even) { background:var(--fg); color:var(--bg); }
+  .case .visual { aspect-ratio:4/5; background-size:cover; background-position:center; filter:grayscale(30%); }
+  .case .info .num { font-size:12px; letter-spacing:0.3em; opacity:0.5; margin-bottom:24px; }
+  .case .info h3 { font-family:'Anton',sans-serif; font-size:clamp(40px,5vw,80px); line-height:0.95; margin-bottom:32px; }
+  .case .info .meta { display:flex; gap:24px; font-size:11px; letter-spacing:0.2em; opacity:0.6; text-transform:uppercase; margin-bottom:32px; }
+  .case .info .quote { font-size:20px; line-height:1.5; font-style:italic; margin-bottom:48px; opacity:0.85; }
+  .case .info .impact { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding-top:32px; border-top:1px solid currentColor; }
+  .case .info .impact .item .n { font-family:'Anton',sans-serif; font-size:48px; color:var(--accent); line-height:1; }
+  .case .info .impact .item .l { font-size:11px; letter-spacing:0.15em; text-transform:uppercase; opacity:0.6; margin-top:8px; }
+
+  /* TECH */
+  #tech { background:#0F1419; padding:120px 48px; position:relative; }
+  #tech::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(245,241,234,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,234,0.03) 1px, transparent 1px); background-size: 40px 40px; }
+  #tech .wrap { position:relative; z-index:2; }
+  #tech .intro { font-size:12px; letter-spacing:0.3em; opacity:0.5; margin-bottom:24px; }
+  #tech h2 { font-size:clamp(48px,7vw,110px); margin-bottom:80px; max-width:1100px; }
+  #tech .certs { display:flex; gap:48px; margin-bottom:64px; padding:32px 0; border-top:1px solid #F5F1EA20; border-bottom:1px solid #F5F1EA20; }
+  #tech .cert { font-family:'Anton',sans-serif; font-size:20px; letter-spacing:0.1em; opacity:0.8; }
+  #tech .pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-bottom:80px; }
+  #tech .pillar { padding:48px 32px; border:1px solid #FF4D3D40; background:rgba(255,77,61,0.03); }
+  #tech .pillar .num { font-family:'Anton',sans-serif; font-size:64px; color:var(--accent); line-height:1; margin-bottom:32px; }
+  #tech .pillar h3 { font-family:'Anton',sans-serif; font-size:28px; margin-bottom:24px; }
+  #tech .pillar ul { list-style:none; }
+  #tech .pillar li { padding:10px 0; border-bottom:1px solid #F5F1EA10; font-size:13px; opacity:0.75; }
+
+  /* CLOSING */
+  #closing { background:var(--bg); text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+  #closing h2 { font-size:clamp(64px,10vw,180px); margin-bottom:48px; }
+  #closing p { font-size:18px; opacity:0.6; max-width:600px; margin-bottom:64px; }
+  #closing .cta { display:flex; gap:24px; }
+  #closing .btn { padding:20px 40px; border:1px solid var(--fg); color:var(--fg); text-decoration:none; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; transition:all 0.3s; }
+  #closing .btn:hover { background:var(--accent); border-color:var(--accent); }
+  #closing .btn.primary { background:var(--accent); border-color:var(--accent); }
+
+  footer { padding:48px; text-align:center; font-size:11px; letter-spacing:0.2em; opacity:0.3; text-transform:uppercase; }
+
+  .reveal { opacity:0; transform:translateY(40px); transition:all 0.8s ease; }
+  .reveal.in { opacity:1; transform:translateY(0); }
+
+  @media (max-width:768px) {
+    nav { padding:16px 24px; }
+    nav ul { display:none; }
+    section { padding:80px 24px; }
+    #agency .stats, #values .grid, #capabilities .pillars, #tech .pillars, #agency .glocal .split { grid-template-columns:1fr; }
+    #capabilities .regions { grid-template-columns:1fr; }
+    .case { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">egg</div>
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#agency">Agency</a></li>
+    <li><a href="#capabilities">Pharma</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#tech">Method</a></li>
+    <li><a href="#closing">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="content">
+    <div class="caption">EGG — EXPERIENTIAL INTERNATIONAL AGENCY</div>
+    <h1 class="display">We Move<br/><span class="accent">You.</span></h1>
+    <p class="sub">Inspiring, innovative, effective — and never, <em>ever</em>, boring.</p>
+  </div>
+  <div class="scroll-cue">SCROLL ↓</div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="lines">
+    <p class="display reveal">We don't run events.</p>
+    <p class="display reveal">We create experiences<br/>that move <span>brands</span>.</p>
+    <p class="display reveal">That move <span>people</span>.</p>
+    <p class="display reveal">That move <span>teams</span>.</p>
+    <p class="display reveal">We surprise. We delight.<br/>We <span>inspire</span>.</p>
+  </div>
+</section>
+
+<!-- AGENCY -->
+<section id="agency">
+  <div class="intro">01 — WHO WE ARE</div>
+  <h2 class="display">Experiential international agency.<br/><span class="accent">24 years young.</span></h2>
+
+  <div class="stats">
+    <div class="stat"><div class="num">1,400+</div><div class="label">Events / year</div></div>
+    <div class="stat"><div class="num">€115M</div><div class="label">Turnover 2025</div></div>
+    <div class="stat"><div class="num">220</div><div class="label">Global employees</div></div>
+    <div class="stat"><div class="num">35</div><div class="label">Nationalities</div></div>
+    <div class="stat"><div class="num">48</div><div class="label">Faithful clients</div></div>
+    <div class="stat"><div class="num">118</div><div class="label">Active clients</div></div>
+    <div class="stat"><div class="num">20</div><div class="label">Languages spoken</div></div>
+    <div class="stat"><div class="num">100%</div><div class="label">Independent & Woman-owned</div></div>
+  </div>
+
+  <div class="glocal">
+    <h3 class="display">We are <span>glocal</span>.</h3>
+    <p style="opacity:0.7; max-width:700px;">Reinforcing local teams by integrating each expertise in each market.</p>
+    <div class="split">
+      <div class="col">
+        <h4>LOCAL</h4>
+        <p>Local skills are essential for understanding the specific characteristics, needs, and cultures of each given region.</p>
+      </div>
+      <div class="col">
+        <h4>GLOBAL</h4>
+        <p>Global skills bring a broader vision and international expertise — best practices, innovation, diverse perspectives and global quality standards.</p>
+      </div>
+    </div>
+    <div class="offices">
+      <span>France</span><span>Belgium</span><span>Switzerland</span><span>Germany</span><span>Italy</span><span>Spain</span><span>USA</span><span>GCC</span>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="intro">02 — OUR VALUES</div>
+  <h2 class="display">Five values.<br/>One <span class="accent">culture</span>.</h2>
+  <div class="grid">
+    <div class="v"><div class="num">01</div><h3>We act with integrity</h3></div>
+    <div class="v"><div class="num">02</div><h3>We embrace growth</h3></div>
+    <div class="v"><div class="num">03</div><h3>We pursue excellence</h3></div>
+    <div class="v"><div class="num">04</div><h3>We own our actions</h3></div>
+    <div class="v"><div class="num">05</div><h3>We care</h3></div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="intro">03 — ONE-STOP SHOP</div>
+  <h2 class="display">Pharma expertise.<br/><span class="accent">Locally rooted.</span></h2>
+
+  <div class="pillars">
+    <div class="p">
+      <div class="num">01</div>
+      <h3>Strategic Planning</h3>
+      <ul><li>Comms proposals</li><li>Content development</li><li>Copywriting</li><li>Event ROI</li><li>Partnership strategy</li></ul>
+    </div>
+    <div class="p">
+      <div class="num">02</div>
+      <h3>Media, Digital & Tech</h3>
+      <ul><li>Virtual event mgmt</li><li>Live streaming</li><li>Video production</li><li>Web design</li><li>Amplification</li></ul>
+    </div>
+    <div class="p">
+      <div class="num">03</div>
+      <h3>Design & Studio</h3>
+      <ul><li>Environmental + 3D</li><li>Brand identity</li><li>Logo creation</li><li>Eco-design</li></ul>
+    </div>
+    <div class="p">
+      <div class="num">04</div>
+      <h3>Brand Xperience</h3>
+      <ul><li>Meeting architecture</li><li>Talent bookings</li><li>Speaker coaching</li><li>Format design</li></ul>
+    </div>
+    <div class="p">
+      <div class="num">05</div>
+      <h3>Production & Logistics</h3>
+      <ul><li>Travel (IATA)</li><li>Delegate mgmt</li><li>Build + tear down</li><li>Permits & licensing</li><li>Run of show</li></ul>
+    </div>
+  </div>
+
+  <div class="regions">
+    <div class="region">
+      <h4 class="display">MEA</h4>
+      <div class="tag">LOCAL PHARMA EXPERTISE</div>
+      <ul>
+        <li>Local production team in Dubai</li>
+        <li>Arabic-first creative capabilities</li>
+        <li>DHA / MOH compliance expertise</li>
+        <li>60+ pharma events delivered</li>
+      </ul>
+    </div>
+    <div class="region">
+      <h4 class="display">KSA</h4>
+      <div class="tag">LOCAL PHARMA EXPERTISE</div>
+      <ul>
+        <li>Saudi-licensed local partners</li>
+        <li>Vision 2030 aligned production</li>
+        <li>SFDA compliance expertise</li>
+        <li>25+ pharma events delivered</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="head">
+    <div class="label">04 — OUR PRODUCTIONS</div>
+    <h2 class="display">Three stories.<br/>Three<br/><span class="accent">transformations</span>.</h2>
+  </div>
+
+  <div class="case">
+    <div class="visual" style="background-image:url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200');"></div>
+    <div class="info">
+      <div class="num">CASE 01 / PHARMA LAUNCH</div>
+      <h3>How a product launch became a movement.</h3>
+      <div class="meta"><span>Dubai 2025</span><span>HCP Engagement</span></div>
+      <p class="quote">"The most memorable HCP event of the year." — Medical Director</p>
+      <div class="impact">
+        <div class="item"><div class="n">1,200</div><div class="l">HCPs engaged</div></div>
+        <div class="item"><div class="n">94%</div><div class="l">NPS score</div></div>
+        <div class="item"><div class="n">+38%</div><div class="l">Brand recall</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <div class="info">
+      <div class="num">CASE 02 / KOL PROGRAM</div>
+      <h3>From advisory board to behaviour shift.</h3>
+      <div class="meta"><span>Riyadh 2024</span><span>Scientific Engagement</span></div>
+      <p class="quote">"A new standard for scientific engagement in the region."</p>
+      <div class="impact">
+        <div class="item"><div class="n">45</div><div class="l">KOLs activated</div></div>
+        <div class="item"><div class="n">12</div><div class="l">Countries reached</div></div>
+        <div class="item"><div class="n">98%</div><div class="l">Satisfaction</div></div>
+      </div>
+    </div>
+    <div class="visual" style="background-image:url('https://images.unsplash.com/photo-1559223607-a43c990c692c?w=1200');"></div>
+  </div>
+
+  <div class="case">
+    <div class="visual" style="background-image:url('https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200');"></div>
+    <div class="info">
+      <div class="num">CASE 03 / CONGRESS</div>
+      <h3>When a congress became a destination.</h3>
+      <div class="meta"><span>EU 2024</span><span>Booth Activation</span></div>
+      <p class="quote">"Our booth was the talk of the congress for three days straight."</p>
+      <div class="impact">
+        <div class="item"><div class="n">8,400</div><div class="l">Booth visitors</div></div>
+        <div class="item"><div class="n">62%</div><div class="l">Lead conversion</div></div>
+        <div class="item"><div class="n">3x</div><div class="l">Industry average</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH -->
+<section id="tech">
+  <div class="wrap">
+    <div class="intro">05 — TECHNICAL OFFER</div>
+    <h2 class="display">Behind every experience,<br/>a precise <span class="accent">machine</span>.</h2>
+
+    <div class="certs">
+      <div class="cert">ISO 20121</div>
+      <div class="cert">IATA</div>
+      <div class="cert">WBENG</div>
+      <div class="cert">RESPONSIBLE MGMT SYSTEM</div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="num">01</div>
+        <h3>Strategy</h3>
+        <ul><li>Key Differentiator Framework</li><li>Audience mapping</li><li>Brief deconstruction</li><li>KPI architecture</li></ul>
+      </div>
+      <div class="pillar">
+        <div class="num">02</div>
+        <h3>Technology</h3>
+        <ul><li>DOMO — real-time intelligence</li><li>Cvent — attendee management</li><li>SpotMe app integration</li><li>w'egg proprietary platform</li></ul>
+      </div>
+      <div class="pillar">
+        <div class="num">03</div>
+        <h3>Method</h3>
+        <ul><li>VCA Value Canvas card</li><li>egg flow methodology</li><li>Continuous QA loop</li><li>Post-event impact audit</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <h2 class="display">We don't pitch.<br/><span class="accent">We invite you in.</span></h2>
+  <p>Ready to design your next experience? Let's start a conversation.</p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:hello@egg-events.com">Start a project</a>
+    <a class="btn" href="#">Download credentials</a>
+  </div>
+</section>
+
+<footer>© egg 2026 — we move you</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        if (e.target.tagName === 'P' && e.target.closest('#manifesto')) e.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('.reveal, #manifesto p').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
